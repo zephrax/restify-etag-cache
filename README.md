@@ -1,5 +1,8 @@
 # restify-etag-cache
 
+[![devDependency Status](https://david-dm.org/zephrax/restify-etag-cache/dev-status.svg)](https://david-dm.org/zephrax/restify-etag-cache#info=devDependencies)
+[![Dependency Status](https://david-dm.org/zephrax/restify-etag-cache.svg)](https://david-dm.org/zephrax/restify-etag-cache)         
+
 > Automatic middleware that enables client cache based on ETag header
 
 ## Getting Started
