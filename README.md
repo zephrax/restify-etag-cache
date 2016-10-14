@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/zephrax/restify-etag-cache.svg?branch=master)](https://travis-ci.org/zephrax/restify-etag-cache)
 [![devDependency Status](https://david-dm.org/zephrax/restify-etag-cache/dev-status.svg)](https://david-dm.org/zephrax/restify-etag-cache#info=devDependencies)
-[![Dependency Status](https://david-dm.org/zephrax/restify-etag-cache.svg)](https://david-dm.org/zephrax/restify-etag-cache)         
+[![Dependency Status](https://david-dm.org/zephrax/restify-etag-cache.svg)](https://david-dm.org/zephrax/restify-etag-cache)
 [![Coverage Status](https://coveralls.io/repos/github/zephrax/restify-etag-cache/badge.svg?branch=master)](https://coveralls.io/github/zephrax/restify-etag-cache?branch=master)
 
 > Automatic middleware that enables client cache based on ETag header
