@@ -1,6 +1,6 @@
 {
   "name": "restify-etag-cache",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Restify ETag Cache. The easy way.",
   "main": "lib/index.js",
   "directories": {
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/**/*.js",
     "coverage": "./node_modules/nyc/bin/nyc.js --reporter=lcov --reporter=text-lcov npm test",
-    "coveralls" : "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
