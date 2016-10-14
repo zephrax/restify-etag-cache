@@ -1,0 +1,40 @@
+{
+  "name": "restify-etag-cache",
+  "version": "1.0.0",
+  "description": "Restify ETag Cache. The easy way.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephrax/restify-etag-cache.git"
+  },
+  "keywords": [
+    "restify",
+    "etag",
+    "cache",
+    "rest",
+    "http",
+    "node",
+    "nodejs",
+    "npm"
+  ],
+  "author": "zephrax@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zephrax/restify-etag-cache/issues"
+  },
+  "homepage": "https://github.com/zephrax/restify-etag-cache#readme",
+  "devDependencies": {
+    "restify": "^4.1.1"
+  },
+  "dependencies": {
+    "async": "^2.1.1",
+    "debug": "^2.2.0",
+    "etag": "^1.7.0"
+  }
+}
