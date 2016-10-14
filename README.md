@@ -10,14 +10,14 @@ Install the module with: `npm install restify-etag-cache`
 
 It works as a middleware, so its very easy to use the library:
 
-`
+```javascript
 var restify = require('restify');
 var restifyEtagCache = require('restify-etag-cache');
 
 var server = restify.createServer();
 
 server.use(restifyEtagCache()); 
-`
+```
 
 Its all ;)
 
