@@ -7,7 +7,7 @@ const chai = require('chai');
 
 const should = chai.should();
 
-var SERVER,
+let SERVER,
   CLIENT,
   PORT;
 
@@ -48,7 +48,7 @@ describe('Restify ETag Cache', () => {
       next();
     });
 
-    var opts = {
+    let opts = {
       path: '/etag/foo',
       headers: {
       }
@@ -72,7 +72,7 @@ describe('Restify ETag Cache', () => {
       next();
     });
 
-    var opts = {
+    let opts = {
       path: '/etag/foo',
       headers: {}
     };
@@ -93,7 +93,7 @@ describe('Restify ETag Cache', () => {
       next();
     });
 
-    var opts = {
+    let opts = {
       path: '/etag/foo',
       headers: {}
     };
@@ -114,7 +114,7 @@ describe('Restify ETag Cache', () => {
       next();
     });
 
-    var opts = {
+    let opts = {
       path: '/etag/foo',
       headers: {
         'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
@@ -126,4 +126,59 @@ describe('Restify ETag Cache', () => {
       done();
     });
   });
+
+  it('should ignore the specific route', function(done) {
+    let etagCacheOptions = {
+      ignore_routes: [ '/etag/:id' ]
+    };
+
+    SERVER.use(restifyEtagCache(etagCacheOptions));
+
+    SERVER.get('/etag/:id', function(req, res, next) {
+      res.send({
+        hello: 'world'
+      });
+      next();
+    });
+
+    let opts = {
+      path: '/etag/foo',
+      headers: {
+        'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
+      }
+    };
+
+    CLIENT.get(opts, function(err, _, res, obj) {
+      res.statusCode.should.equal(200);
+      done();
+    });
+  });
+
+  it('should ignore the specific url', function(done) {
+    let etagCacheOptions = {
+      ignore_urls: [ '/specific/url' ]
+    };
+
+    SERVER.use(restifyEtagCache(etagCacheOptions));
+
+    SERVER.get('/specific/url', function(req, res, next) {
+      res.send({
+        hello: 'world'
+      });
+      next();
+    });
+
+    let opts = {
+      path: '/specific/url',
+      headers: {
+        'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
+      }
+    };
+
+    CLIENT.get(opts, function(err, _, res, obj) {
+      res.statusCode.should.equal(200);
+      done();
+    });
+  });
+
 });

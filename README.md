@@ -20,11 +20,22 @@ var restify = require('restify');
 var restifyEtagCache = require('restify-etag-cache');
 
 var server = restify.createServer();
+var options = {
+	ignore_routes : [ '/some/route/to/ignore/:withParam' ],
+	ignore_urls : [ '/some/specific/url/to/ignore'  ]
+};
 
-server.use(restifyEtagCache()); 
+server.use(restifyEtagCache(options)); 
 ```
 
 Its all ;)
 
 The server will reply HTTP status code 304 (Not Modified) when it detects that the client already have the latest content version.
+
+## Options
+
+At this time, there are only two options available:
+
+ignore_urls
+ignore_routes
 
