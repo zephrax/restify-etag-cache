@@ -39,3 +39,7 @@ At this time, there are only two options available:
 ignore_urls
 ignore_routes
 
+## Support
+
+IRC [#kernelpanic @ irc.kernelpanic.com.ar](http://kernelpanic.com.ar/chat/)
+
