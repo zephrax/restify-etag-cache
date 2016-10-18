@@ -22,7 +22,8 @@ var restifyEtagCache = require('restify-etag-cache');
 var server = restify.createServer();
 var options = {
 	ignore_routes : [ '/some/route/to/ignore/:withParam' ],
-	ignore_urls : [ '/some/specific/url/to/ignore'  ]
+	ignore_urls : [ '/some/specific/url/to/ignore'  ],
+	weak: false
 };
 
 server.use(restifyEtagCache(options)); 
@@ -36,8 +37,11 @@ The server will reply HTTP status code 304 (Not Modified) when it detects that t
 
 At this time, there are only two options available:
 
-ignore_urls
-ignore_routes
+ignore_urls (array of urls)
+
+ignore_routes (array of routes)
+
+weak (boolean, set to use weak etag generation or not)
 
 ## Support
 
