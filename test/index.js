@@ -78,7 +78,7 @@ describe('Restify ETag Cache', () => {
     };
 
     CLIENT.get(opts, function(err, _, res, obj) {
-      res.headers.etag.should.equal('"11-+8JLzHoXlHWPwTJ/z+va9g"');
+      res.headers.etag.should.equal('"11-IkjuL6CqqtmReFMfkkvwC0sKj04"');
       done();
     });
   });
@@ -117,7 +117,7 @@ describe('Restify ETag Cache', () => {
     let opts = {
       path: '/etag/foo',
       headers: {
-        'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
+        'If-None-Match': '"11-IkjuL6CqqtmReFMfkkvwC0sKj04"'
       }
     };
 
@@ -144,7 +144,7 @@ describe('Restify ETag Cache', () => {
     let opts = {
       path: '/etag/foo',
       headers: {
-        'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
+        'If-None-Match': '"11-IkjuL6CqqtmReFMfkkvwC0sKj04"'
       }
     };
 
@@ -171,7 +171,7 @@ describe('Restify ETag Cache', () => {
     let opts = {
       path: '/specific/url',
       headers: {
-        'If-None-Match': '"11-+8JLzHoXlHWPwTJ/z+va9g"'
+        'If-None-Match': '"11-IkjuL6CqqtmReFMfkkvwC0sKj04"'
       }
     };
 
